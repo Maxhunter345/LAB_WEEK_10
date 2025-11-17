@@ -8,13 +8,11 @@ class TotalViewModel : ViewModel() {
     private val _total = MutableLiveData<Int>()
     val total: LiveData<Int> = _total
 
-    init { _total.value = 0 }
-
-    fun incrementTotal() {
-        _total.value = (_total.value ?: 0) + 1
+    init {
+        _total.value = 0
     }
 
-    fun setTotal(newTotal: Int) {
-        _total.value = newTotal
+    fun incrementTotal() {
+        _total.value = _total.value?.plus(1)
     }
 }
